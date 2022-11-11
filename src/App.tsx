@@ -1,4 +1,3 @@
-import { clear } from "console";
 import React, { useEffect, useState } from "react";
 
 function App() {
