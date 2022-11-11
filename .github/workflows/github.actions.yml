@@ -15,5 +15,6 @@ jobs:
       - run: npm install
       - name: List files in the repository
         run: |
-          npm run depoly
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
       - run: echo "🍏 This job's status is ${{ job.status }}."
