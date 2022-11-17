@@ -40,12 +40,14 @@ function App() {
             ]}
           />
         </Header>
-        <Layout.Content style={{ padding: "100 50px" }}>
-          <Routes>
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/home" element={<Home />} />
-          </Routes>
+        <Layout.Content style={{ padding: "0 50px", height : "300px" }}>
+          <div className="site-layout-content" style={{}}>
+            <Routes>
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/resume" element={<Resume />} />
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </div>
         </Layout.Content>
       </Router>
     </Layout>
@@ -73,7 +75,7 @@ const Portfolio = () => {
 };
 
 const Home = () => {
-  return <></>;
+  return <div style={{background: "#fff", height :"200px", padding : "24px", marginTop : "60px", marginBottom : "60px"}}>홈페이지</div>;
 };
 
 export default App;
