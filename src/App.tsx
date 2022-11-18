@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Button, Layout, Menu } from "antd";
+import { Avatar, Button, Layout, List, Menu } from "antd";
 const { Header } = Layout;
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import { GoogleLogin, useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
+import { GuestBook } from "./guestbook";
 
 function App() {
   const login = useGoogleLogin({
@@ -57,12 +58,17 @@ function App() {
                 key: 3,
                 label: <Link to="/portfolio">포트폴리오</Link>,
               },
+              {
+                key: 4,
+                label: <Link to="/guestbook">방명록</Link>,
+              }
             ]}
           />
         </Header>
         <Layout.Content style={{ padding: "0 50px", height : "300px" }}>
           <div className="site-layout-content" style={{}}>
             <Routes>
+            <Route path="/guestbook" element={<GuestBook />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/resume" element={<Resume />} />
               <Route path="/" element={<Home />} />
@@ -97,5 +103,8 @@ const Portfolio = () => {
 const Home = () => {
   return <div style={{background: "#fff", height :"200px", padding : "24px", marginTop : "60px", marginBottom : "60px"}}>홈페이지</div>;
 };
+
+
+
 
 export default App;
